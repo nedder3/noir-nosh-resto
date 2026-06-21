@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - Noir Nosh</title>
+    <meta name="description" content="Elevate your restaurant's online presence with our Elegant Restaurant Website template. Designed for fine dining establishments, combines sophistication and functionality.">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">NOIR NOSH</a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Our Menu</a></li>
+                <li><a href="reservation.html" class="nav-link active">Reservation</a></li>
+                <li class="nav-cta"><a href="https://framer.com" target="_blank" class="btn btn-secondary">Get Template</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Reservation Section -->
+    <section class="reservation-section section-padding">
+        <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+            
+            <!-- Reservation Header -->
+            <div class="reservation-header reveal">
+                <h1 class="font-serif-italic">Secure Your Seat</h1>
+                <p>Reserve your table for unforgettable moments of gastronomic bliss</p>
+            </div>
+            
+            <!-- Reservation Form Card -->
+            <div class="reservation-form-container reveal" style="transition-delay: 0.1s;">
+                <form id="reservation-form" class="reservation-form">
+                    <div class="form-group">
+                        <label for="res-name">Full Name</label>
+                        <input type="text" id="res-name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="res-email">Email Address</label>
+                        <input type="email" id="res-email" required placeholder="john@example.com">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-date">Date</label>
+                            <input type="date" id="res-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-time">Time</label>
+                            <input type="time" id="res-time" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="res-guests">Number of Guests</label>
+                        <select id="res-guests" required>
+                            <option value="" disabled selected>Select number of guests</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6+ People</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Book a Reservation</button>
+                </form>
+            </div>
+            
+            <!-- 3 Column Contact Columns (Aligning with PDF Page 1 bottom) -->
+            <div class="footer-grid reveal" style="width: 100%; border-top: 1px solid var(--color-dark-gray); padding-top: 60px; margin-top: 40px;">
+                <div class="footer-column">
+                    <h3>Open Hours</h3>
+                    <ul>
+                        <li>Mon - Fri: 6.00 PM - 11.00 PM</li>
+                        <li>Sat - Sun: 12.00 PM - 10.00 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Address</h3>
+                    <ul>
+                        <li>Noir Nosh Fine Dining, 789 Refined Street, Cityville, State 34567</li>
+                        <li>✉ info@noirnosh.com</li>
+                        <li>📞 (555) 123-4567</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us On</h3>
+                    <ul>
+                        <li><a href="https://instagram.com" target="_blank">Instagram ↗</a></li>
+                        <li><a href="https://facebook.com" target="_blank">Facebook ↗</a></li>
+                        <li><a href="https://twitter.com" target="_blank">Twitter ↗</a></li>
+                        <li><a href="https://youtube.com" target="_blank">Youtube ↗</a></li>
+                        <li><a href="https://linkedin.com" target="_blank">Linkedin ↗</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Success Modal Overlay -->
+    <div id="success-modal-overlay" class="modal-overlay">
+        <div class="success-modal">
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3>Reservation Successful!</h3>
+            <p>Your table has been reserved. A confirmation email has been sent with details.</p>
+            <p id="modal-reservation-details" style="background-color: #f5f5f5; padding: 16px; border: 1px solid #e5e5e5; width: 100%; color: #000000; font-family: var(--font-body); font-size: 13px; line-height: 1.5;"></p>
+            <button id="modal-close-btn" class="btn btn-primary" style="margin-top: 12px; width: 100%;">Great, Thank You</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-wordmark-container" style="border-top: none;">
+                <div class="footer-wordmark">NOIR NOSH</div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-credits">Build by <a href="#" target="_blank">Anisarianii</a> with <a href="https://framer.com" target="_blank">Framer</a></div>
+                <div class="footer-copyright">© 2024 Noir Nosh Framer Template. All right reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
