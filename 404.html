@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - Noir Nosh</title>
-    <meta name="description" content="Elevate your restaurant's online presence with our Elegant Restaurant Website template. Designed for fine dining establishments, combines sophistication and functionality.">
+    <title data-i18n="title_404">Página No Encontrada - Noir Nosh</title>
+    <meta name="description" content="Eleve la presencia en línea de su restaurante con Noir Nosh. Diseñado para establecimientos de alta cocina, combina sofisticación y funcionalidad.">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -23,10 +23,18 @@
             </button>
             
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="menu.html" class="nav-link">Our Menu</a></li>
-                <li><a href="reservation.html" class="nav-link">Reservation</a></li>
-                <li class="nav-cta"><a href="https://framer.com" target="_blank" class="btn btn-secondary">Get Template</a></li>
+                <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+                <li><a href="menu.html" class="nav-link" data-i18n="nav_menu">Nuestro Menú</a></li>
+                <li><a href="reservation.html" class="nav-link" data-i18n="nav_reservation">Reservaciones</a></li>
+                <li class="nav-lang">
+                    <div class="lang-select-wrapper">
+                        <select class="lang-select" aria-label="Cambiar idioma">
+                            <option value="es" selected>ES</option>
+                            <option value="en">EN</option>
+                            <option value="fr">FR</option>
+                        </select>
+                    </div>
+                </li>
             </ul>
         </div>
     </header>
@@ -35,9 +43,9 @@
     <section class="error-section">
         <div class="error-container reveal">
             <div class="error-code">404</div>
-            <h1 class="error-title">Page Not Found</h1>
-            <p>The page you are looking for doesn't exist or has been moved. Please go back to the homepage.</p>
-            <a href="index.html" class="btn btn-primary" style="margin-top: 12px;">Back to Home</a>
+            <h1 class="error-title" data-i18n="error_title">Página No Encontrada</h1>
+            <p data-i18n="error_desc">La página que busca no existe o ha sido trasladada. Por favor, regrese a la página de inicio.</p>
+            <a href="index.html" class="btn btn-primary" style="margin-top: 12px;" data-i18n="btn_back_home">Volver al Inicio</a>
         </div>
     </section>
 
@@ -46,22 +54,22 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h3>Open Hours</h3>
-                    <ul>
-                        <li>Mon - Fri: 6.00 PM - 11.00 PM</li>
-                        <li>Sat - Sun: 12.00 PM - 10.00 PM</li>
+                    <h3 data-i18n="footer_hours">Horario</h3>
+                    <ul data-i18n="footer_hours_days">
+                        <li>Lun - Vie: 6:00 PM - 11:00 PM</li>
+                        <li>Sáb - Dom: 12:00 PM - 10:00 PM</li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Address</h3>
+                    <h3 data-i18n="footer_address">Dirección</h3>
                     <ul>
-                        <li>Noir Nosh Fine Dining, 789 Refined Street, Cityville, State 34567</li>
+                        <li>Noir Nosh Alta Cocina, 789 Calle Refinada, Cityville, Estado 34567</li>
                         <li>✉ info@noirnosh.com</li>
                         <li>📞 (555) 123-4567</li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Follow Us On</h3>
+                    <h3 data-i18n="footer_follow">Síganos en</h3>
                     <ul>
                         <li><a href="https://instagram.com" target="_blank">Instagram ↗</a></li>
                         <li><a href="https://facebook.com" target="_blank">Facebook ↗</a></li>
@@ -77,12 +85,13 @@
             </div>
             
             <div class="footer-bottom">
-                <div class="footer-credits">Build by <a href="#" target="_blank">Anisarianii</a> with <a href="https://framer.com" target="_blank">Framer</a></div>
-                <div class="footer-copyright">© 2024 Noir Nosh Framer Template. All right reserved.</div>
+                <div class="footer-credits" data-i18n="footer_credits">Hecho por <a href="#" target="_blank">DEVESA</a></div>
+                <div class="footer-copyright" data-i18n="footer_copyright">© 2026 Noir Nosh por DEVESA. Todos los derechos reservados.</div>
             </div>
         </div>
     </footer>
 
+    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
