@@ -1,4 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Language Translation Logic
+    function updateLanguage(lang) {
+        if (typeof translations === 'undefined' || !translations[lang]) return;
+        
+        const t = translations[lang];
+        
+        // Translate elements with data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.value = t[key];
+                } else {
+                    el.innerHTML = t[key];
+                }
+            }
+        });
+
+        // Translate placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (t[key] !== undefined) {
+                el.setAttribute('placeholder', t[key]);
+            }
+        });
+
+        // Translate document title
+        let pageKey = 'home';
+        const path = window.location.pathname;
+        if (path.includes('menu.html')) {
+            pageKey = 'menu';
+        } else if (path.includes('reservation.html')) {
+            pageKey = 'reservation';
+        } else if (path.includes('404.html')) {
+            pageKey = '404';
+        }
+        
+        if (t[`title_${pageKey}`]) {
+            document.title = t[`title_${pageKey}`];
+        }
+        
+        // Translate meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && t.meta_desc) {
+            metaDesc.setAttribute('content', t.meta_desc);
+        }
+
+        // Keep language switcher dropdowns in sync
+        document.querySelectorAll('.lang-select').forEach(select => {
+            select.value = lang;
+        });
+
+        // Store active language
+        localStorage.setItem('selectedLanguage', lang);
+    }
+
+    // Initialize Language
+    const initialLang = localStorage.getItem('selectedLanguage') || 'es';
+    updateLanguage(initialLang);
+
+    // Setup language dropdown event listeners
+    document.addEventListener('change', (e) => {
+        if (e.target && e.target.classList.contains('lang-select')) {
+            updateLanguage(e.target.value);
+        }
+    });
+
     // 1. Header Scroll Effect
     const header = document.querySelector('header');
     if (header) {
@@ -92,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let isValid = true;
             const inputs = reservationForm.querySelectorAll('input, select');
             inputs.forEach(input => {
-                if (!input.value.strip ? input.value.trim() : input.value) {
+                if (!input.value) {
                     isValid = false;
                 }
             });
@@ -104,9 +171,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 const time = document.getElementById('res-time').value;
                 const guests = document.getElementById('res-guests').value;
                 
+                const activeLang = localStorage.getItem('selectedLanguage') || 'es';
+                const t = (typeof translations !== 'undefined') ? translations[activeLang] : null;
+                
+                const labelGuest = t ? t.detail_guest : 'Invitado';
+                const labelDate = t ? t.detail_date : 'Fecha';
+                const labelTime = t ? t.detail_time : 'Hora';
+                const labelTableFor = t ? t.detail_table_for : 'Mesa para';
+                const labelPeople = t ? (guests === '1' ? t.detail_person : t.detail_people) : (guests === '1' ? 'persona' : 'personas');
+
                 const modalDetails = document.getElementById('modal-reservation-details');
                 if (modalDetails) {
-                    modalDetails.innerHTML = `<strong>Invitado:</strong> ${name}<br><strong>Fecha:</strong> ${date} | <strong>Hora:</strong> ${time}<br><strong>Mesa para:</strong> ${guests} personas`;
+                    modalDetails.innerHTML = `<strong>${labelGuest}:</strong> ${name}<br><strong>${labelDate}:</strong> ${date} | <strong>${labelTime}:</strong> ${time}<br><strong>${labelTableFor}:</strong> ${guests} ${labelPeople}`;
                 }
 
                 // Show modal
