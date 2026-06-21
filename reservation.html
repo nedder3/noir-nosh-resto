@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation - Noir Nosh</title>
-    <meta name="description" content="Elevate your restaurant's online presence with our Elegant Restaurant Website template. Designed for fine dining establishments, combines sophistication and functionality.">
+    <title data-i18n="title_reservation">Reservaciones - Noir Nosh</title>
+    <meta name="description" content="Eleve la presencia en línea de su restaurante con Noir Nosh. Diseñado para establecimientos de alta cocina, combina sofisticación y funcionalidad.">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -23,10 +23,18 @@
             </button>
             
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="menu.html" class="nav-link">Our Menu</a></li>
-                <li><a href="reservation.html" class="nav-link active">Reservation</a></li>
-                <li class="nav-cta"><a href="https://framer.com" target="_blank" class="btn btn-secondary">Get Template</a></li>
+                <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+                <li><a href="menu.html" class="nav-link" data-i18n="nav_menu">Nuestro Menú</a></li>
+                <li><a href="reservation.html" class="nav-link active" data-i18n="nav_reservation">Reservaciones</a></li>
+                <li class="nav-lang">
+                    <div class="lang-select-wrapper">
+                        <select class="lang-select" aria-label="Cambiar idioma">
+                            <option value="es" selected>ES</option>
+                            <option value="en">EN</option>
+                            <option value="fr">FR</option>
+                        </select>
+                    </div>
+                </li>
             </ul>
         </div>
     </header>
@@ -37,70 +45,70 @@
             
             <!-- Reservation Header -->
             <div class="reservation-header reveal">
-                <h1 class="font-serif-italic">Secure Your Seat</h1>
-                <p>Reserve your table for unforgettable moments of gastronomic bliss</p>
+                <h1 class="font-serif-italic" data-i18n="res_header_title">Asegure su Mesa</h1>
+                <p data-i18n="res_header_desc">Reserve su mesa para momentos inolvidables de felicidad gastronómica</p>
             </div>
             
             <!-- Reservation Form Card -->
             <div class="reservation-form-container reveal" style="transition-delay: 0.1s;">
                 <form id="reservation-form" class="reservation-form">
                     <div class="form-group">
-                        <label for="res-name">Full Name</label>
-                        <input type="text" id="res-name" required placeholder="John Doe">
+                        <label for="res-name" data-i18n="label_name">Nombre Completo</label>
+                        <input type="text" id="res-name" required placeholder="Juan Pérez" data-i18n-placeholder="placeholder_name">
                     </div>
                     
                     <div class="form-group">
-                        <label for="res-email">Email Address</label>
-                        <input type="email" id="res-email" required placeholder="john@example.com">
+                        <label for="res-email" data-i18n="label_email">Correo Electrónico</label>
+                        <input type="email" id="res-email" required placeholder="juan@ejemplo.com" data-i18n-placeholder="placeholder_email">
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="res-date">Date</label>
+                            <label for="res-date" data-i18n="label_date">Fecha</label>
                             <input type="date" id="res-date" required>
                         </div>
                         <div class="form-group">
-                            <label for="res-time">Time</label>
+                            <label for="res-time" data-i18n="label_time">Hora</label>
                             <input type="time" id="res-time" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="res-guests">Number of Guests</label>
+                        <label for="res-guests" data-i18n="label_guests">Número de Invitados</label>
                         <select id="res-guests" required>
-                            <option value="" disabled selected>Select number of guests</option>
-                            <option value="1">1 Person</option>
-                            <option value="2">2 People</option>
-                            <option value="3">3 People</option>
-                            <option value="4">4 People</option>
-                            <option value="5">5 People</option>
-                            <option value="6">6+ People</option>
+                            <option value="" disabled selected data-i18n="placeholder_guests">Seleccione el número de invitados</option>
+                            <option value="1" data-i18n="guest_option_1">1 Persona</option>
+                            <option value="2" data-i18n="guest_option_2">2 Personas</option>
+                            <option value="3" data-i18n="guest_option_3">3 Personas</option>
+                            <option value="4" data-i18n="guest_option_4">4 Personas</option>
+                            <option value="5" data-i18n="guest_option_5">5 Personas</option>
+                            <option value="6" data-i18n="guest_option_6">6+ Personas</option>
                         </select>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Book a Reservation</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="btn_submit">Reservar una Mesa</button>
                 </form>
             </div>
             
-            <!-- 3 Column Contact Columns (Aligning with PDF Page 1 bottom) -->
+            <!-- 3 Column Contact Columns -->
             <div class="footer-grid reveal" style="width: 100%; border-top: 1px solid var(--color-dark-gray); padding-top: 60px; margin-top: 40px;">
                 <div class="footer-column">
-                    <h3>Open Hours</h3>
-                    <ul>
-                        <li>Mon - Fri: 6.00 PM - 11.00 PM</li>
-                        <li>Sat - Sun: 12.00 PM - 10.00 PM</li>
+                    <h3 data-i18n="footer_hours">Horario</h3>
+                    <ul data-i18n="footer_hours_days">
+                        <li>Lun - Vie: 6:00 PM - 11:00 PM</li>
+                        <li>Sáb - Dom: 12:00 PM - 10:00 PM</li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Address</h3>
+                    <h3 data-i18n="footer_address">Dirección</h3>
                     <ul>
-                        <li>Noir Nosh Fine Dining, 789 Refined Street, Cityville, State 34567</li>
+                        <li>Noir Nosh Alta Cocina, 789 Calle Refinada, Cityville, Estado 34567</li>
                         <li>✉ info@noirnosh.com</li>
                         <li>📞 (555) 123-4567</li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Follow Us On</h3>
+                    <h3 data-i18n="footer_follow">Síganos en</h3>
                     <ul>
                         <li><a href="https://instagram.com" target="_blank">Instagram ↗</a></li>
                         <li><a href="https://facebook.com" target="_blank">Facebook ↗</a></li>
@@ -120,10 +128,10 @@
             <div class="success-icon">
                 <i class="fa-solid fa-check"></i>
             </div>
-            <h3>Reservation Successful!</h3>
-            <p>Your table has been reserved. A confirmation email has been sent with details.</p>
+            <h3 data-i18n="modal_success_title">¡Reservación Exitosa!</h3>
+            <p data-i18n="modal_success_desc">Su mesa ha sido reservada. Se ha enviado un correo electrónico de confirmación con los detalles.</p>
             <p id="modal-reservation-details" style="background-color: #f5f5f5; padding: 16px; border: 1px solid #e5e5e5; width: 100%; color: #000000; font-family: var(--font-body); font-size: 13px; line-height: 1.5;"></p>
-            <button id="modal-close-btn" class="btn btn-primary" style="margin-top: 12px; width: 100%;">Great, Thank You</button>
+            <button id="modal-close-btn" class="btn btn-primary" style="margin-top: 12px; width: 100%;" data-i18n="modal_close_btn">Excelente, Gracias</button>
         </div>
     </div>
 
@@ -135,12 +143,13 @@
             </div>
             
             <div class="footer-bottom">
-                <div class="footer-credits">Build by <a href="#" target="_blank">Anisarianii</a> with <a href="https://framer.com" target="_blank">Framer</a></div>
-                <div class="footer-copyright">© 2024 Noir Nosh Framer Template. All right reserved.</div>
+                <div class="footer-credits" data-i18n="footer_credits">Hecho por <a href="#" target="_blank">DEVESA</a></div>
+                <div class="footer-copyright" data-i18n="footer_copyright">© 2026 Noir Nosh por DEVESA. Todos los derechos reservados.</div>
             </div>
         </div>
     </footer>
 
+    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
