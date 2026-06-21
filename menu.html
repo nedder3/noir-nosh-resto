@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Menu - Noir Nosh</title>
-    <meta name="description" content="Elevate your restaurant's online presence with our Elegant Restaurant Website template. Designed for fine dining establishments, combines sophistication and functionality.">
+    <title data-i18n="title_menu">Nuestro Menú - Noir Nosh</title>
+    <meta name="description" content="Eleve la presencia en línea de su restaurante con Noir Nosh. Diseñado para establecimientos de alta cocina, combina sofisticación y funcionalidad.">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -23,10 +23,18 @@
             </button>
             
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="menu.html" class="nav-link active">Our Menu</a></li>
-                <li><a href="reservation.html" class="nav-link">Reservation</a></li>
-                <li class="nav-cta"><a href="https://framer.com" target="_blank" class="btn btn-secondary">Get Template</a></li>
+                <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+                <li><a href="menu.html" class="nav-link active" data-i18n="nav_menu">Nuestro Menú</a></li>
+                <li><a href="reservation.html" class="nav-link" data-i18n="nav_reservation">Reservaciones</a></li>
+                <li class="nav-lang">
+                    <div class="lang-select-wrapper">
+                        <select class="lang-select" aria-label="Cambiar idioma">
+                            <option value="es" selected>ES</option>
+                            <option value="en">EN</option>
+                            <option value="fr">FR</option>
+                        </select>
+                    </div>
+                </li>
             </ul>
         </div>
     </header>
@@ -34,8 +42,8 @@
     <!-- Menu Header -->
     <section class="menu-header">
         <div class="container reveal">
-            <h1 class="font-serif-italic">Our Menu</h1>
-            <p>Noir Nosh offers a menu that celebrates global flavours with the finest ingredients crafted into culinary masterpieces. From starters to desserts, each dish is an exquisite experience that invites you on a gastronomic journey like no other.</p>
+            <h1 class="font-serif-italic" data-i18n="menu_header_title">Nuestro Menú</h1>
+            <p data-i18n="menu_header_desc">Noir Nosh ofrece un menú que celebra los sabores globales con los mejores ingredientes convertidos en obras maestras culinarias. Desde las entradas hasta los postres, cada plato es una experiencia exquisita que lo invita a un viaje gastronómico sin igual.</p>
         </div>
     </section>
 
@@ -46,7 +54,7 @@
             <!-- Category: Appetizers -->
             <div class="menu-category-section reveal">
                 <div class="menu-section-header">
-                    <h2>Appetizers</h2>
+                    <h2 data-i18n="category_appetizers">Entradas</h2>
                     <div class="line"></div>
                 </div>
                 <div class="menu-grid">
@@ -57,10 +65,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Smoked Salmon Canapé</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_salmon_canape_name">Canapé de Salmón Ahumado</h3>
                                 <span class="menu-item-price">$18</span>
                             </div>
-                            <p class="menu-item-desc">Smoked salmon on herbed cream cheese on a crostini.</p>
+                            <p class="menu-item-desc" data-i18n="dish_salmon_canape_desc">Salmón ahumado con queso crema de hierbas sobre un crostini.</p>
                         </div>
                     </div>
 
@@ -70,10 +78,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Fried Dumpling</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_fried_dumpling_name">Dumpling Frito</h3>
                                 <span class="menu-item-price">$12</span>
                             </div>
-                            <p class="menu-item-desc">Golden-fried seasoned meats or veggies served with fresh herbs and a signature dipping sauce.</p>
+                            <p class="menu-item-desc" data-i18n="dish_fried_dumpling_desc">Carnes o verduras sazonadas fritas doradas servidas con hierbas frescas y salsa de la casa.</p>
                         </div>
                     </div>
 
@@ -83,10 +91,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Classic Tartare</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_classic_tartare_name">Tártaro Clásico</h3>
                                 <span class="menu-item-price">$19</span>
                             </div>
-                            <p class="menu-item-desc">Finely chopped and kissed with citrus and herbs/Dijon mustard and capers/soy sauce and ginger.</p>
+                            <p class="menu-item-desc" data-i18n="dish_classic_tartare_desc">Finamente picado y aderezado con cítricos y hierbas, mostaza Dijon y alcaparras, o salsa de soya y jengibre.</p>
                         </div>
                     </div>
 
@@ -96,10 +104,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Niçoise Salad</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_nicoise_salad_name">Ensalada Niza</h3>
                                 <span class="menu-item-price">$17</span>
                             </div>
-                            <p class="menu-item-desc">French salad with fresh/cooked veggies, tuna, eggs, olives, anchovies, and vinaigrette.</p>
+                            <p class="menu-item-desc" data-i18n="dish_nicoise_salad_desc">Ensalada francesa con verduras frescas y cocidas, atún, huevos, aceitunas, anchoas y vinagreta.</p>
                         </div>
                     </div>
 
@@ -109,10 +117,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Foie Gras Terrine</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_foie_gras_name">Terrina de Foie Gras</h3>
                                 <span class="menu-item-price">$22</span>
                             </div>
-                            <p class="menu-item-desc">Duck or goose liver dish, seasoned with salt and pepper, made from force-fed birds.</p>
+                            <p class="menu-item-desc" data-i18n="dish_foie_gras_desc">Plato de hígado de pato o ganso, sazonado con sal y pimienta.</p>
                         </div>
                     </div>
 
@@ -122,10 +130,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Kottey</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_kottey_name">Kottey</h3>
                                 <span class="menu-item-price">$20</span>
                             </div>
-                            <p class="menu-item-desc">A dish made with fried plantain and ground peanuts.</p>
+                            <p class="menu-item-desc" data-i18n="dish_kottey_desc">Un plato elaborado con plátano frito y maní molido.</p>
                         </div>
                     </div>
                 </div>
@@ -134,7 +142,7 @@
             <!-- Category: Main Courses -->
             <div class="menu-category-section reveal" style="transition-delay: 0.1s;">
                 <div class="menu-section-header">
-                    <h2>Main Courses</h2>
+                    <h2 data-i18n="category_mains">Platos Fuertes</h2>
                     <div class="line"></div>
                 </div>
                 <div class="menu-grid">
@@ -145,10 +153,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Seared Scallops</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_seared_scallops_name">Vieiras Selladas</h3>
                                 <span class="menu-item-price">$38</span>
                             </div>
-                            <p class="menu-item-desc">Pan-seared scallops. Served on a bed of creamy risotto and drizzled with a lemon beurre blanc.</p>
+                            <p class="menu-item-desc" data-i18n="dish_seared_scallops_desc">Vieiras selladas a la sartén. Servidas sobre una cama de risotto cremoso y rociadas con salsa de mantequilla de limón.</p>
                         </div>
                     </div>
 
@@ -158,10 +166,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Mantu</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_mantu_name">Mantu</h3>
                                 <span class="menu-item-price">$30</span>
                             </div>
-                            <p class="menu-item-desc">Steamed or boiled dumplings filled with ground meat (lamb, beef, or goat), onions, garlic, and spices.</p>
+                            <p class="menu-item-desc" data-i18n="dish_mantu_desc">Dumplings al vapor o hervidos rellenos de carne picada (cordero, res o cabra), cebolla, ajo y especias.</p>
                         </div>
                     </div>
 
@@ -171,10 +179,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Shrimp Noodles</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_shrimp_noodles_name">Tallarines con Camarones</h3>
                                 <span class="menu-item-price">$35</span>
                             </div>
-                            <p class="menu-item-desc">A dish made with shrimp, noodles, garlic, butter, and white wine.</p>
+                            <p class="menu-item-desc" data-i18n="dish_shrimp_noodles_desc">Plato elaborado con camarones, tallarines, ajo, mantequilla y vino blanco.</p>
                         </div>
                     </div>
 
@@ -184,10 +192,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Salmon and Rice</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_salmon_rice_name">Salmón con Arroz</h3>
                                 <span class="menu-item-price">$40</span>
                             </div>
-                            <p class="menu-item-desc">Grilled salmon on white rice with steamed broccoli and carrots.</p>
+                            <p class="menu-item-desc" data-i18n="dish_salmon_rice_desc">Salmón a la parrilla sobre arroz blanco con brócoli y zanahorias al vapor.</p>
                         </div>
                     </div>
 
@@ -197,10 +205,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Cioppino with Bread</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_cioppino_name">Cioppino con Pan</h3>
                                 <span class="menu-item-price">$35</span>
                             </div>
-                            <p class="menu-item-desc">Mediterranean seafood stew with olive oil.</p>
+                            <p class="menu-item-desc" data-i18n="dish_cioppino_desc">Estofado de mariscos mediterráneo con aceite de oliva.</p>
                         </div>
                     </div>
 
@@ -210,10 +218,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Chicken Breast Salad</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_chicken_salad_name">Ensalada de Pechuga de Pollo</h3>
                                 <span class="menu-item-price">$34</span>
                             </div>
-                            <p class="menu-item-desc">Grilled chicken salad with mixed greens, cucumbers, red onions, cherry tomatoes, feta cheese, and light vinaigrette.</p>
+                            <p class="menu-item-desc" data-i18n="dish_chicken_salad_desc">Ensalada de pollo a la parrilla con mezcla de lechugas, pepinos, cebolla roja, tomates cherry, queso feta y vinagreta ligera.</p>
                         </div>
                     </div>
                 </div>
@@ -222,7 +230,7 @@
             <!-- Category: Vegetarian Delights -->
             <div class="menu-category-section reveal" style="transition-delay: 0.1s;">
                 <div class="menu-section-header">
-                    <h2>Vegetarian Delights</h2>
+                    <h2 data-i18n="category_veggie">Delicias Vegetarianas</h2>
                     <div class="line"></div>
                 </div>
                 <div class="menu-grid">
@@ -233,10 +241,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Avocado Toast with Blueberries</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_avocado_toast_name">Tostada de Aguacate con Arándanos</h3>
                                 <span class="menu-item-price">$18</span>
                             </div>
-                            <p class="menu-item-desc">Toasted whole grain bread layered with smooth avocado and topped with a vibrant blueberry-lemon compote. Sprinkled with sunflower seeds.</p>
+                            <p class="menu-item-desc" data-i18n="dish_avocado_toast_desc">Pan integral tostado con aguacate suave y compota vibrante de arándanos y limón. Espolvoreado con semillas de girasol.</p>
                         </div>
                     </div>
 
@@ -246,10 +254,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Green Salad</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_green_salad_name">Ensalada Verde</h3>
                                 <span class="menu-item-price">$16</span>
                             </div>
-                            <p class="menu-item-desc">A mixed of leafy greens like lettuce, spinach, and kale.</p>
+                            <p class="menu-item-desc" data-i18n="dish_green_salad_desc">Mezcla de hojas verdes como lechuga, espinaca y col rizada.</p>
                         </div>
                     </div>
 
@@ -259,10 +267,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Corn Cob</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_corn_cob_name">Mazorca de Maíz</h3>
                                 <span class="menu-item-price">$15</span>
                             </div>
-                            <p class="menu-item-desc">Corn on a stick with a colourful mix of paprika, leek, red onion, and creamy sauce.</p>
+                            <p class="menu-item-desc" data-i18n="dish_corn_cob_desc">Maíz en brocheta con una mezcla colorida de paprika, puerro, cebolla roja y salsa cremosa.</p>
                         </div>
                     </div>
 
@@ -272,10 +280,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Tomato Pesto Pasta</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_tomato_pasta_name">Pasta con Pesto de Tomate</h3>
                                 <span class="menu-item-price">$25</span>
                             </div>
-                            <p class="menu-item-desc">Al dente pasta tossed in aromatic basil pesto, adorned with fresh slices of ripe tomato.</p>
+                            <p class="menu-item-desc" data-i18n="dish_tomato_pasta_desc">Pasta al dente mezclada con pesto de albahaca aromático, adornada con rodajas de tomate fresco maduro.</p>
                         </div>
                     </div>
 
@@ -285,10 +293,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Green Veggie Cauliflower</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_cauliflower_name">Coliflor con Verduras Verdes</h3>
                                 <span class="menu-item-price">$22</span>
                             </div>
-                            <p class="menu-item-desc">Tender cauliflower mingled with a medley of vibrant green vegetables, seasoned to perfection.</p>
+                            <p class="menu-item-desc" data-i18n="dish_cauliflower_desc">Coliflor tierna mezclada con una variedad de verduras verdes vibrantes, sazonada a la perfección.</p>
                         </div>
                     </div>
 
@@ -298,10 +306,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Vegan Sandwich</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_vegan_sandwich_name">Sándwich Vegano</h3>
                                 <span class="menu-item-price">$20</span>
                             </div>
-                            <p class="menu-item-desc">Tangy sriracha mayo tangoes with crunchy cabbage and cool cucumber on a toasted sourdough stage.</p>
+                            <p class="menu-item-desc" data-i18n="dish_vegan_sandwich_desc">Mayonesa sriracha picante combinada con col crujiente y pepino fresco en pan de masa madre tostado.</p>
                         </div>
                     </div>
                 </div>
@@ -310,7 +318,7 @@
             <!-- Category: Dessert Ateliers -->
             <div class="menu-category-section reveal" style="transition-delay: 0.1s;">
                 <div class="menu-section-header">
-                    <h2>Dessert Ateliers</h2>
+                    <h2 data-i18n="category_dessert">Postres</h2>
                     <div class="line"></div>
                 </div>
                 <div class="menu-grid">
@@ -321,10 +329,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Strawberry Mille-Feuille</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_mille_feuille_name">Milhojas de Fresa</h3>
                                 <span class="menu-item-price">$14</span>
                             </div>
-                            <p class="menu-item-desc">Layers of flaky pastry, delicate cream, and fresh strawberries harmonize in a decadent dance.</p>
+                            <p class="menu-item-desc" data-i18n="dish_mille_feuille_desc">Capas de hojaldre crujiente, crema de vainilla y fresas frescas que armonizan en una danza decadente.</p>
                         </div>
                     </div>
 
@@ -334,10 +342,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Fruit Parfait</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_fruit_parfait_name">Parfait de Frutas</h3>
                                 <span class="menu-item-price">$12</span>
                             </div>
-                            <p class="menu-item-desc">A layered dessert made with greek yogurt, granola, and berries.</p>
+                            <p class="menu-item-desc" data-i18n="dish_fruit_parfait_desc">Postre en capas elaborado con yogur griego, granola y frutos rojos.</p>
                         </div>
                     </div>
 
@@ -347,10 +355,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Matcha Moonbeam Sundae</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_matcha_sundae_name">Copa Matcha Moonbeam</h3>
                                 <span class="menu-item-price">$13</span>
                             </div>
-                            <p class="menu-item-desc">Matcha moonbeam over vanilla swirls kissed with nectar and floral whisper.</p>
+                            <p class="menu-item-desc" data-i18n="dish_matcha_sundae_desc">Matcha moonbeam sobre remolinos de vainilla con un toque de néctar y susurro floral.</p>
                         </div>
                     </div>
 
@@ -360,10 +368,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Chocolate Volcano</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_chocolate_volcano_name">Volcán de Chocolate</h3>
                                 <span class="menu-item-price">$15</span>
                             </div>
-                            <p class="menu-item-desc">A decadent dessert made with a warm, gooey chocolate centre surrounded by a thin cake shell.</p>
+                            <p class="menu-item-desc" data-i18n="dish_chocolate_volcano_desc">Postre decadente con un centro de chocolate tibio y líquido rodeado de una fina capa de bizcocho.</p>
                         </div>
                     </div>
 
@@ -373,10 +381,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Blueberry Cheesecake</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_blueberry_cheesecake_name">Cheesecake de Arándanos</h3>
                                 <span class="menu-item-price">$14</span>
                             </div>
-                            <p class="menu-item-desc">Graham cracker crust, cream cheese filling with sour cream, eggs, sugar, and vanilla.</p>
+                            <p class="menu-item-desc" data-i18n="dish_blueberry_cheesecake_desc">Base de galleta graham, relleno de queso crema con crema agria, huevos, azúcar y vainilla.</p>
                         </div>
                     </div>
 
@@ -386,10 +394,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Strawberry Crepe</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_strawberry_crepe_name">Crepa de Fresa</h3>
                                 <span class="menu-item-price">$13</span>
                             </div>
-                            <p class="menu-item-desc">Delicate crepe adorned with clouds of whipped cream, sweet raspberries, and crowned with a luscious strawberry.</p>
+                            <p class="menu-item-desc" data-i18n="dish_strawberry_crepe_desc">Delicada crepa adornada con crema batida, frambuesas dulces y coronada con una fresa fresca.</p>
                         </div>
                     </div>
                 </div>
@@ -398,7 +406,7 @@
             <!-- Category: Beverages -->
             <div class="menu-category-section reveal" style="transition-delay: 0.1s;">
                 <div class="menu-section-header">
-                    <h2>Beverages</h2>
+                    <h2 data-i18n="category_beverages">Bebidas</h2>
                     <div class="line"></div>
                 </div>
                 <div class="menu-grid">
@@ -409,10 +417,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">French 75</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_french75_name">French 75</h3>
                                 <span class="menu-item-price">$15</span>
                             </div>
-                            <p class="menu-item-desc">A gin and champagne cocktail with lemon juice and sugar delivers a bubbly drink.</p>
+                            <p class="menu-item-desc" data-i18n="dish_french75_desc">Cóctel de ginebra y champán con jugo de limón y azúcar, que ofrece una bebida burbujeante.</p>
                         </div>
                     </div>
 
@@ -422,10 +430,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Vetz Spritz</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_vetz_spritz_name">Vetz Spritz</h3>
                                 <span class="menu-item-price">$14</span>
                             </div>
-                            <p class="menu-item-desc">Aperol Spritz with lime and rosemary.</p>
+                            <p class="menu-item-desc" data-i18n="dish_vetz_spritz_desc">Aperol Spritz con lima y romero.</p>
                         </div>
                     </div>
 
@@ -435,10 +443,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Cranberry Juice</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_cranberry_juice_name">Jugo de Arándano</h3>
                                 <span class="menu-item-price">$7</span>
                             </div>
-                            <p class="menu-item-desc">A cranberry plant (Vaccinium macrocarpon) beverage is tart and tangy, with potential health benefits.</p>
+                            <p class="menu-item-desc" data-i18n="dish_cranberry_juice_desc">Bebida de arándano agria y refrescante, con múltiples beneficios para la salud.</p>
                         </div>
                     </div>
 
@@ -448,10 +456,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Iced Tea</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_iced_tea_name">Té Helado</h3>
                                 <span class="menu-item-price">$5</span>
                             </div>
-                            <p class="menu-item-desc">A refreshing beverage made by steeping black tea leaves in hot water and then chilling it.</p>
+                            <p class="menu-item-desc" data-i18n="dish_iced_tea_desc">Bebida refrescante elaborada mediante la infusión de hojas de té negro en agua caliente y posterior enfriamiento.</p>
                         </div>
                     </div>
 
@@ -461,10 +469,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Respite Cocktail</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_respite_cocktail_name">Cóctel Respite</h3>
                                 <span class="menu-item-price">$16</span>
                             </div>
-                            <p class="menu-item-desc">Gin-based cocktail with elderflower liqueur, lime juice, cucumber, and rosemary garnish.</p>
+                            <p class="menu-item-desc" data-i18n="dish_respite_cocktail_desc">Cóctel a base de ginebra con licor de flor de saúco, jugo de lima, pepino y adorno de romero.</p>
                         </div>
                     </div>
 
@@ -474,10 +482,10 @@
                         </div>
                         <div class="menu-item-info">
                             <div class="menu-item-header">
-                                <h3 class="menu-item-title">Whiskey Sour</h3>
+                                <h3 class="menu-item-title" data-i18n="dish_whiskey_sour_name">Whiskey Sour</h3>
                                 <span class="menu-item-price">$15</span>
                             </div>
-                            <p class="menu-item-desc">A classic cocktail made with whiskey, lemon juice, sugar, and egg white. It's tart and sweet.</p>
+                            <p class="menu-item-desc" data-i18n="dish_whiskey_sour_desc">Un cóctel clásico elaborado con whiskey, jugo de limón, azúcar y clara de huevo. Es ácido y dulce.</p>
                         </div>
                     </div>
                 </div>
@@ -489,7 +497,7 @@
     <!-- CTA Banner -->
     <a href="reservation.html" class="cta-banner reveal">
         <div class="container cta-banner-content">
-            <div class="cta-banner-title">Book a Reservation</div>
+            <div class="cta-banner-title" data-i18n="cta_banner_title">Reservar una Mesa</div>
             <div class="cta-banner-arrow">→</div>
         </div>
     </a>
@@ -499,22 +507,22 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h3>Open Hours</h3>
-                    <ul>
-                        <li>Mon - Fri: 6.00 PM - 11.00 PM</li>
-                        <li>Sat - Sun: 12.00 PM - 10.00 PM</li>
+                    <h3 data-i18n="footer_hours">Horario</h3>
+                    <ul data-i18n="footer_hours_days">
+                        <li>Lun - Vie: 6:00 PM - 11:00 PM</li>
+                        <li>Sáb - Dom: 12:00 PM - 10:00 PM</li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Address</h3>
+                    <h3 data-i18n="footer_address">Dirección</h3>
                     <ul>
-                        <li>Noir Nosh Fine Dining, 789 Refined Street, Cityville, State 34567</li>
+                        <li>Noir Nosh Alta Cocina, 789 Calle Refinada, Cityville, Estado 34567</li>
                         <li>✉ info@noirnosh.com</li>
                         <li>📞 (555) 123-4567</li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Follow Us On</h3>
+                    <h3 data-i18n="footer_follow">Síganos en</h3>
                     <ul>
                         <li><a href="https://instagram.com" target="_blank">Instagram ↗</a></li>
                         <li><a href="https://facebook.com" target="_blank">Facebook ↗</a></li>
@@ -530,12 +538,13 @@
             </div>
             
             <div class="footer-bottom">
-                <div class="footer-credits">Build by <a href="#" target="_blank">Anisarianii</a> with <a href="https://framer.com" target="_blank">Framer</a></div>
-                <div class="footer-copyright">© 2024 Noir Nosh Framer Template. All right reserved.</div>
+                <div class="footer-credits" data-i18n="footer_credits">Hecho por <a href="#" target="_blank">DEVESA</a></div>
+                <div class="footer-copyright" data-i18n="footer_copyright">© 2026 Noir Nosh por DEVESA. Todos los derechos reservados.</div>
             </div>
         </div>
     </footer>
 
+    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
