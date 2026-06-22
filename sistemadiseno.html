@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Sistema de Diseño - Noir Nosh Figma Documentation</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Noir Nosh Premium Light Minimalist variables */
+            --color-white: #ffffff;
+            --color-bg-black: #ffffff;
+            --color-bg-dark: #ffffff;
+            --color-offwhite: #000000;
+            --color-light-gray: #1a1a1a;
+            --color-gray: #555555;
+            --color-dark-gray: #e5e5e5;
+            
+            --color-gold: #000000;
+            --color-gold-hover: #333333;
+            --color-gold-glow: rgba(0, 0, 0, 0.05);
+
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-bg-black);
+            color: var(--color-offwhite);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 60px 24px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--color-dark-gray);
+            padding-bottom: 24px;
+        }
+
+        .breadcrumb {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-gray);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--color-dark-gray);
+            padding-bottom: 8px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        /* Color Palette Grid */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .color-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .color-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .color-swatch-card {
+            border: 1px solid var(--color-dark-gray);
+            border-radius: 0;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .color-swatch-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .swatch {
+            height: 120px;
+            width: 100%;
+            border-bottom: 1px solid var(--color-dark-gray);
+        }
+
+        .swatch-info {
+            padding: 16px;
+        }
+
+        .swatch-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .swatch-hex {
+            font-family: monospace;
+            font-size: 13px;
+            color: var(--color-gray);
+            margin-bottom: 8px;
+        }
+
+        .swatch-use {
+            font-size: 12px;
+            color: var(--color-gray);
+            line-height: 1.4;
+        }
+
+        /* Typography Showcase */
+        .typography-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .font-specimen {
+            border: 1px solid var(--color-dark-gray);
+            padding: 30px;
+        }
+
+        .specimen-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-gray);
+            border-bottom: 1px solid var(--color-dark-gray);
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+        }
+
+        .typo-sample {
+            margin-bottom: 24px;
+        }
+
+        .typo-name {
+            font-size: 12px;
+            font-family: monospace;
+            color: var(--color-gray);
+            margin-bottom: 8px;
+        }
+
+        .display-large {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .display-medium {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .display-italic {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 28px;
+        }
+
+        .body-large {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .body-regular {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--color-gray);
+        }
+
+        .price-text {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Buttons Component Grid */
+        .component-section {
+            border: 1px solid var(--color-dark-gray);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .component-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fafafa;
+            border: 1px solid var(--color-dark-gray);
+        }
+
+        .column-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-gray);
+            border-bottom: 1px solid var(--color-dark-gray);
+            width: 100%;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Button elements styling replicating style.css */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-radius: 0;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Normal State */
+        .btn-primary-normal {
+            background-color: var(--color-gold);
+            color: var(--color-white);
+            border: 1px solid var(--color-gold);
+        }
+
+        .btn-secondary-normal {
+            background-color: transparent;
+            color: var(--color-gold);
+            border: 1px solid var(--color-gold);
+        }
+
+        /* Hover State (Simulated) */
+        .btn-primary-hover {
+            background-color: var(--color-gold-hover);
+            border: 1px solid var(--color-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary-hover {
+            background-color: rgba(0, 0, 0, 0.03);
+            color: var(--color-gold);
+            border: 1px solid var(--color-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Clicked State (Simulated) */
+        .btn-primary-clicked {
+            background-color: #111111;
+            border: 1px solid #111111;
+            transform: translateY(0);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+            color: #dddddd;
+        }
+
+        .btn-secondary-clicked {
+            background-color: rgba(0, 0, 0, 0.08);
+            color: var(--color-gold);
+            border: 1px solid var(--color-gold);
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="breadcrumb">Archivo Figma / Página 2</div>
+            <h1>Sistema de Diseño (Branding)</h1>
+        </header>
+
+        <!-- Section 1: Color Palette -->
+        <section class="section">
+            <h2>Paleta de Colores</h2>
+            <div class="color-grid">
+                <!-- Blanco -->
+                <div class="color-swatch-card">
+                    <div class="swatch" style="background-color: #ffffff;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">White</div>
+                        <div class="swatch-hex">#FFFFFF</div>
+                        <div class="swatch-use">Fondo principal. Brinda aire y pureza al diseño minimalist.</div>
+                    </div>
+                </div>
+                <!-- Negro -->
+                <div class="color-swatch-card">
+                    <div class="swatch" style="background-color: #000000;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Black</div>
+                        <div class="swatch-hex">#000000</div>
+                        <div class="swatch-use">Botón primario, títulos y logo. Aporta sofisticación y elegancia.</div>
+                    </div>
+                </div>
+                <!-- Dark Gray / Light Gray var -->
+                <div class="color-swatch-card">
+                    <div class="swatch" style="background-color: #1a1a1a;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Dark Charcoal</div>
+                        <div class="swatch-hex">#1A1A1A</div>
+                        <div class="swatch-use">Estado hover de botones primarios y subtítulos secundarios.</div>
+                    </div>
+                </div>
+                <!-- Gray -->
+                <div class="color-swatch-card">
+                    <div class="swatch" style="background-color: #555555;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Medium Gray</div>
+                        <div class="swatch-hex">#555555</div>
+                        <div class="swatch-use">Textos descriptivos de platos y cuerpo de texto para lectura cómoda.</div>
+                    </div>
+                </div>
+                <!-- Light Gray -->
+                <div class="color-swatch-card">
+                    <div class="swatch" style="background-color: #e5e5e5;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Soft Gray</div>
+                        <div class="swatch-hex">#E5E5E5</div>
+                        <div class="swatch-use">Bordes de tarjetas, líneas divisoras de categorías y separadores.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Typography -->
+        <section class="section">
+            <h2>Tipografías</h2>
+            <div class="typography-grid">
+                <!-- Heading Specimen -->
+                <div class="font-specimen">
+                    <div class="specimen-label">Tipografía de Títulos (Serif con Carácter)</div>
+                    
+                    <div class="typo-sample">
+                        <div class="typo-name">Playfair Display - H1 (Bold 48px)</div>
+                        <div class="display-large">El arte culinario trascendido</div>
+                    </div>
+                    
+                    <div class="typo-sample">
+                        <div class="typo-name">Playfair Display - H2 (Bold 28px)</div>
+                        <div class="display-medium">Sobre Nosotros</div>
+                    </div>
+
+                    <div class="typo-sample">
+                        <div class="typo-name">Playfair Display - Italic (Regular Italic 28px)</div>
+                        <div class="display-italic">Nuestra propuesta gastronómica</div>
+                    </div>
+                </div>
+
+                <!-- Body Specimen -->
+                <div class="font-specimen">
+                    <div class="specimen-label">Tipografía de Cuerpo y Datos (Sans-Serif Limpia)</div>
+                    
+                    <div class="typo-sample">
+                        <div class="typo-name">Inter - Subtitle / Link (Medium 16px)</div>
+                        <div class="body-large">Reservar una Mesa / Inicio</div>
+                    </div>
+
+                    <div class="typo-sample">
+                        <div class="typo-name">Inter - Paragraph (Regular 15px)</div>
+                        <div class="body-regular">Descubra una sinfonía de sabores elaborados con precisión y presentados en un entorno de lujo incomparable. Eleve su experiencia gastronómica en Noir Nosh.</div>
+                    </div>
+
+                    <div class="typo-sample">
+                        <div class="typo-name">Inter - Price (SemiBold 18px)</div>
+                        <div class="price-text">$38.000 ARS</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Buttons States Component -->
+        <section class="section">
+            <h2>Componentes del Sistema</h2>
+            <div class="component-section">
+                <div class="breadcrumb">Variantes de Botones Interactivos</div>
+                
+                <div class="component-grid">
+                    <!-- Normal Column -->
+                    <div class="component-column">
+                        <div class="column-title">01. Estado Normal</div>
+                        <div class="btn btn-primary-normal">Reservar una Mesa</div>
+                        <div class="btn btn-secondary-normal">Ver Menú Completo</div>
+                    </div>
+
+                    <!-- Hover Column -->
+                    <div class="component-column">
+                        <div class="column-title">02. Estado Hover (Pasar mouse)</div>
+                        <div class="btn btn-primary-hover">Reservar una Mesa</div>
+                        <div class="btn btn-secondary-hover">Ver Menú Completo</div>
+                    </div>
+
+                    <!-- Clicked Column -->
+                    <div class="component-column">
+                        <div class="column-title">03. Estado Clickeado (Activo)</div>
+                        <div class="btn btn-primary-clicked">Reservar una Mesa</div>
+                        <div class="btn btn-secondary-clicked">Ver Menú Completo</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
