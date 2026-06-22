@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Investigación y Concepto - Noir Nosh Figma Documentation</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #000000;
+            --color-gray: #555555;
+            --color-light-gray: #f9f9f9;
+            --color-border: #e5e5e5;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 60px 24px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 24px;
+        }
+
+        .breadcrumb {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-gray);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--color-text);
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 8px;
+        }
+
+        /* Section Layouts */
+        .section {
+            margin-bottom: 80px;
+        }
+
+        /* Moodboard Grid */
+        .moodboard-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .moodboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .moodboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .mood-item {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            background-color: var(--color-light-gray);
+            transition: var(--transition-smooth);
+        }
+
+        .mood-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Specific grid patterns to make it look like a cool moodboard */
+        .mood-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+            aspect-ratio: auto;
+        }
+
+        .mood-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(10%) contrast(105%);
+            transition: var(--transition-smooth);
+        }
+
+        .mood-label {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--color-text);
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--color-border);
+        }
+
+        /* Target Audience Card */
+        .audience-card {
+            background-color: var(--color-light-gray);
+            border: 1px solid var(--color-border);
+            padding: 40px;
+            margin-bottom: 40px;
+            transition: var(--transition-smooth);
+        }
+
+        .audience-card:hover {
+            border-color: var(--color-text);
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-text);
+            border: 1px solid var(--color-text);
+            padding: 4px 10px;
+            margin-bottom: 20px;
+        }
+
+        .audience-title {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--color-text);
+        }
+
+        .audience-desc {
+            font-size: 16px;
+            color: var(--color-gray);
+            max-width: 800px;
+            margin-bottom: 24px;
+        }
+
+        .audience-bullets {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            border-top: 1px solid var(--color-border);
+            padding-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .audience-bullets {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bullet-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-text);
+        }
+
+        .bullet-item p {
+            font-size: 14px;
+            color: var(--color-gray);
+        }
+
+        /* Rationale Cards */
+        .rationale-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .rationale-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .rationale-card {
+            border: 1px solid var(--color-border);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-smooth);
+        }
+
+        .rationale-card:hover {
+            border-color: var(--color-text);
+            transform: translateY(-4px);
+        }
+
+        .rationale-num {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-style: italic;
+            color: var(--color-border);
+            margin-bottom: 20px;
+            transition: var(--transition-smooth);
+        }
+
+        .rationale-card:hover .rationale-num {
+            color: var(--color-text);
+        }
+
+        .rationale-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            color: var(--color-text);
+        }
+
+        .rationale-quote {
+            font-size: 14px;
+            color: var(--color-gray);
+            line-height: 1.7;
+            font-style: italic;
+            border-left: 2px solid var(--color-text);
+            padding-left: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="breadcrumb">Archivo Figma / Página 1</div>
+            <h1>Investigación y Concepto</h1>
+        </header>
+
+        <!-- Section 1: Moodboard -->
+        <section class="section">
+            <h2>Moodboard de Inspiración</h2>
+            <div class="moodboard-grid">
+                <!-- Large mood item: Table Setting -->
+                <div class="mood-item large">
+                    <img src="images/AEWyobsm6jKidvKSPxGT47l87g.jpg" alt="Elegante Mesa" class="mood-img">
+                    <div class="mood-label">Estética de Mesa y Luces</div>
+                </div>
+                <!-- Dumpling -->
+                <div class="mood-item">
+                    <img src="images/6HF2sMv0DgWZmvNeXb5ptt6c6Lo.jpg" alt="Textura Comida" class="mood-img">
+                    <div class="mood-label">Texturas Gastronómicas</div>
+                </div>
+                <!-- Chef preparing -->
+                <div class="mood-item">
+                    <img src="images/3pUzE00ORcUe9y53GEGoNJDgQ.jpg" alt="Chef Preparación" class="mood-img">
+                    <div class="mood-label">Técnica y Calidez</div>
+                </div>
+                <!-- Cocktail -->
+                <div class="mood-item">
+                    <img src="images/uZYF7vPBbj6MmClelu92cx1IEs.jpg" alt="Coctelería" class="mood-img">
+                    <div class="mood-label">Detalles de Lujo</div>
+                </div>
+                <!-- Poached Egg -->
+                <div class="mood-item">
+                    <img src="images/4T03vWnvrIfoCBq28NkWT01x0.jpg" alt="Huevo Poché" class="mood-img">
+                    <div class="mood-label">Presentación Limpia</div>
+                </div>
+                <!-- Scallops -->
+                <div class="mood-item large">
+                    <img src="images/Bk5Fd6WVtu5OK6dddjnILglzcU.jpg" alt="Vieiras Selladas" class="mood-img">
+                    <div class="mood-label">Contrastes y Emplatado</div>
+                </div>
+                <!-- Champagne toast -->
+                <div class="mood-item">
+                    <img src="images/pIYH6MPP6NNM5aFZhv4HYXlANo.jpg" alt="Copas Champagne" class="mood-img">
+                    <div class="mood-label">Momentos Exclusivos</div>
+                </div>
+                <!-- Dining close up -->
+                <div class="mood-item">
+                    <img src="images/yk6IXk6ogrIs9xGHSmCtthaJklg.jpg" alt="Mesa de Comedor" class="mood-img">
+                    <div class="mood-label">Materiales Naturales</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Público Objetivo -->
+        <section class="section">
+            <h2>Público Objetivo</h2>
+            <div class="audience-card">
+                <div class="card-tag">User Persona</div>
+                <h3 class="audience-title">El Gourmet Contemporáneo</h3>
+                <p class="audience-desc">
+                    El restaurante Noir Nosh se dirige a un público con alta sensibilidad estética y amor por los detalles gastronómicos refinados. No buscan solo saciar su apetito, sino vivir una experiencia de prestigio y confort culinario.
+                </p>
+                <div class="audience-bullets">
+                    <div class="bullet-item">
+                        <h4>Demografía</h4>
+                        <p>Jóvenes y adultos de 25-50 años. Residentes de zonas de alta gama (ej. Recoleta, Buenos Aires) o turistas internacionales atraídos por la reputación gastronómica del lugar.</p>
+                    </div>
+                    <div class="bullet-item">
+                        <h4>Psicografía</h4>
+                        <p>Valoradores del minimalismo, la pureza y los ingredientes premium. Prefieren el lujo sobrio e inteligente a la ostentación ruidosa. Activos digitalmente y con expectativas de servicio impecable.</p>
+                    </div>
+                    <div class="bullet-item">
+                        <h4>Motivaciones</h4>
+                        <p>Celebrar ocasiones especiales, encuentros de negocios que requieren sofisticación discreta y el deseo de explorar platos de alta cocina reconocidos internacionalmente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Justificaciones Conceptuales (Branding & UX) -->
+        <section class="section">
+            <h2>Fundamentos del Diseño</h2>
+            <div class="rationale-grid">
+                <!-- Color Psychology -->
+                <div class="rationale-card">
+                    <div>
+                        <div class="rationale-num">01</div>
+                        <h3 class="rationale-title">Psicología del Color</h3>
+                    </div>
+                    <blockquote class="rationale-quote">
+                        "Buscamos una estética elegante y minimalista. El negro aporta sofisticación, posicionando al restaurante como una opción premium o de alta cocina."
+                    </blockquote>
+                </div>
+
+                <!-- Typography and Visual Hierarchy -->
+                <div class="rationale-card">
+                    <div>
+                        <div class="rationale-num">02</div>
+                        <h3 class="rationale-title">Jerarquía Visual (UI)</h3>
+                    </div>
+                    <blockquote class="rationale-quote">
+                        "Usamos una tipografía llamativa y con personalidad ('Playfair Display') únicamente para los títulos principales para captar la atención del usuario en menos de 3 segundos. Para los precios y descripciones de los platos, usamos una tipografía Sans-Serif ('Inter') muy limpia, garantizando que el cliente lea el menú sin esfuerzo desde cualquier celular."
+                    </blockquote>
+                </div>
+
+                <!-- Business UX Rationale -->
+                <div class="rationale-card">
+                    <div>
+                        <div class="rationale-num">03</div>
+                        <h3 class="rationale-title">Experiencia del Negocio (UX)</h3>
+                    </div>
+                    <blockquote class="rationale-quote">
+                        "<strong>El botón principal (CTA)</strong>: El botón de 'Reservar Mesa' o 'Ver Menú' está siempre visible y en un color contrastante para convertir visitas en clientes reales.<br><br>
+                        <strong>La comida primero</strong>: Ubicamos fotos de platos reales en alta definición en la cabecera (Hero section) para generar impacto visual inmediato.<br><br>
+                        <strong>Fricción cero</strong>: Diseñamos el menú digital con filtros rápidos (ej: Vegano, Sin Tacc) para acelerar su decisión."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
